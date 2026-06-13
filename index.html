@@ -254,36 +254,36 @@
 </head>
 <body>
 <div class="container">
-  <h1>⚽ MUNDIAL 2026 🏆</h1>
+  <h1>⚽ Polla Mundialista 🏆</h1>
   <div class="subtitle">Predicciones • 1° y 2° lugar de cada grupo</div>
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="tab-btn active" id="tabParticipante">📋 Participar</button>
-    <button class="tab-btn" id="tabAdmin">🔐 Admin</button>
-    <button class="tab-btn" id="tabClasificacion">📊 Clasificación</button>
+    <button class="tab-btn active" id="tabParticipante"> Participar</button>
+    <button class="tab-btn" id="tabAdmin"> Admin</button>
+    <button class="tab-btn" id="tabClasificacion"> Clasificación</button>
   </div>
 
   <!-- PANEL PARTICIPANTE -->
   <div id="panelParticipante" class="panel active-panel">
-    <h3 style="color:#1f4f1f;">👤 Ingresá tu predicción</h3>
-    <div id="loadingParticipante" class="loading" style="display:none;">⏳ Cargando datos...</div>
+    <h3 style="color:#1f4f1f;"> Ingresá tu predicción</h3>
+    <div id="loadingParticipante" class="loading" style="display:none;"> Cargando datos...</div>
     <div class="input-row" style="margin-bottom: 1.2rem;">
       <label style="min-width:80px;">Tu nombre:</label>
-      <input type="text" id="nombreParticipante" placeholder="Ej: Juan Gómez" style="max-width:250px;">
+      <input type="text" id="nombreParticipante" placeholder="Ej: Carlos Naranjo" style="max-width:250px;">
     </div>
     <div class="groups-grid" id="gruposParticipante"></div>
-    <button class="btn" id="guardarPrediccion">💾 Guardar mi predicción</button>
+    <button class="btn" id="guardarPrediccion"> Guardar mi predicción</button>
     <div id="mensajeParticipante" class="message" style="display:none;"></div>
   </div>
 
   <!-- PANEL ADMINISTRADOR -->
   <div id="panelAdmin" class="panel">
-    <h3 style="color:#1f4f1f;">🛡️ Resultados oficiales (solo admin)</h3>
+    <h3 style="color:#1f4f1f;"> Resultados oficiales (solo admin)</h3>
     
     <!-- Crear admin por primera vez -->
     <div id="setupAdmin" class="setup-box" style="display:none;">
-      <p style="font-weight:600;">🔐 Primera configuración: creá tu contraseña de administrador</p>
+      <p style="font-weight:600;"> Primera configuración: creá tu contraseña de administrador</p>
       <div style="display:flex; gap:0.5rem; justify-content:center; align-items:center; flex-wrap:wrap;">
         <input type="password" id="nuevaClaveAdmin" class="password-input" placeholder="Nueva contraseña">
         <button class="btn" id="btnCrearAdmin">Crear administrador</button>
@@ -293,30 +293,30 @@
 
     <!-- Login admin -->
     <div id="loginAdmin" class="admin-lock" style="display:none;">
-      <span>🔑 Clave:</span>
+      <span> Clave:</span>
       <input type="password" id="claveAdmin" class="password-input" placeholder="Contraseña">
       <button class="btn" id="btnDesbloquear">Desbloquear</button>
     </div>
 
     <!-- Contenido administrativo -->
     <div id="adminContent" style="display:none;">
-      <div id="loadingAdmin" class="loading" style="display:none;">⏳ Cargando datos...</div>
+      <div id="loadingAdmin" class="loading" style="display:none;"> Cargando datos...</div>
       <p style="font-weight:600; color:#2d572c;">Ingresá los equipos que realmente quedaron 1° y 2° en cada grupo.</p>
       <div class="groups-grid" id="gruposAdmin"></div>
-      <button class="btn admin-action" id="guardarResultados">✅ Guardar resultados oficiales</button>
-      <button class="btn admin-action" id="btnCalcularPuntos" style="margin-left:0.5rem;">🧮 Calcular puntuaciones</button>
+      <button class="btn admin-action" id="guardarResultados"> Guardar resultados oficiales</button>
+      <button class="btn admin-action" id="btnCalcularPuntos" style="margin-left:0.5rem;"> Calcular puntuaciones</button>
       <div id="mensajeAdmin" class="message" style="display:none;"></div>
     </div>
   </div>
 
   <!-- PANEL CLASIFICACIÓN -->
   <div id="panelClasificacion" class="panel">
-    <h3 style="color:#1f4f1f;">🏅 Tabla de posiciones</h3>
-    <div id="loadingClasificacion" class="loading" style="display:none;">⏳ Cargando clasificación...</div>
+    <h3 style="color:#1f4f1f;"> Tabla de posiciones</h3>
+    <div id="loadingClasificacion" class="loading" style="display:none;"> Cargando clasificación...</div>
     <div id="contenedorTabla">
       <p style="color:#5c5c5c;">Cargando datos desde Firebase...</p>
     </div>
-    <button class="btn" id="btnRefrescarClasificacion">🔄 Actualizar tabla</button>
+    <button class="btn" id="btnRefrescarClasificacion"> Actualizar tabla</button>
   </div>
 </div>
 
@@ -467,7 +467,7 @@
   // ==================== MOSTRAR CLASIFICACIÓN ====================
   function mostrarClasificacion() {
     if (!hayResultadosOficiales()) {
-      contenedorTabla.innerHTML = '<p style="color:#b45f06;">⚠️ El administrador aún no ingresó los resultados.</p>';
+      contenedorTabla.innerHTML = '<p style="color:#b45f06;"> El administrador aún no ingresó los resultados.</p>';
       return;
     }
     if (!predicciones.length) {
