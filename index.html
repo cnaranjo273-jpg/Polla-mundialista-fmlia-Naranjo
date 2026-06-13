@@ -8,11 +8,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: linear-gradient(145deg, #0b3d1e 0%, #1a5c32 100%);
       font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
@@ -29,7 +25,7 @@
       background: rgba(255, 248, 235, 0.95);
       backdrop-filter: blur(10px);
       border-radius: 2.5rem;
-      box-shadow: 0 30px 55px rgba(0, 0, 0, 0.5), inset 0 2px 10px rgba(255, 215, 0, 0.6);
+      box-shadow: 0 30px 55px rgba(0,0,0,0.5), inset 0 2px 10px rgba(255,215,0,0.6);
       padding: 2rem 2rem 2.2rem;
       border: 2px solid #f5c542;
     }
@@ -94,9 +90,7 @@
       display: none;
       animation: fade 0.3s ease;
     }
-    .panel.active-panel {
-      display: block;
-    }
+    .panel.active-panel { display: block; }
     @keyframes fade {
       from { opacity: 0.5; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -114,27 +108,9 @@
       border-left: 6px solid #2e7d32;
       box-shadow: 0 5px 12px rgba(0,0,0,0.1);
     }
-    .group-card h4 {
-      margin: 0 0 0.6rem;
-      color: #1b4d1b;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-    .input-row {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.5rem;
-      flex-wrap: wrap;
-    }
-    .input-row label {
-      font-weight: 600;
-      color: #2d572c;
-      min-width: 55px;
-      font-size: 0.9rem;
-    }
+    .group-card h4 { margin: 0 0 0.6rem; color: #1b4d1b; font-weight: 800; display: flex; align-items: center; gap: 0.3rem; }
+    .input-row { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+    .input-row label { font-weight: 600; color: #2d572c; min-width: 55px; font-size: 0.9rem; }
     .input-row input {
       flex: 1;
       padding: 0.5rem 0.7rem;
@@ -145,10 +121,7 @@
       outline: none;
       transition: 0.2s;
     }
-    .input-row input:focus {
-      border-color: #1e824c;
-      box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.3);
-    }
+    .input-row input:focus { border-color: #1e824c; box-shadow: 0 0 0 3px rgba(46,125,50,0.3); }
     .btn {
       background: #f0b823;
       border: none;
@@ -165,16 +138,8 @@
       align-items: center;
       gap: 0.4rem;
     }
-    .btn:hover {
-      background: #ffcc4d;
-      box-shadow: 0 8px 14px rgba(0,0,0,0.25);
-      transform: translateY(-1px);
-    }
-    .btn.admin-action {
-      background: #2e5a2e;
-      color: white;
-      border-color: #b9942c;
-    }
+    .btn:hover { background: #ffcc4d; box-shadow: 0 8px 14px rgba(0,0,0,0.25); transform: translateY(-1px); }
+    .btn.admin-action { background: #2e5a2e; color: white; border-color: #b9942c; }
     .admin-lock {
       background: #f7e9cf;
       padding: 1.2rem;
@@ -185,11 +150,7 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    .password-input {
-      padding: 0.6rem 1rem;
-      border-radius: 2rem;
-      border: 1px solid #c2a144;
-    }
+    .password-input { padding: 0.6rem 1rem; border-radius: 2rem; border: 1px solid #c2a144; }
     .results-table {
       width: 100%;
       border-collapse: collapse;
@@ -199,28 +160,10 @@
       overflow: hidden;
       box-shadow: 0 8px 18px rgba(0,0,0,0.1);
     }
-    .results-table th {
-      background: #1e4d2b;
-      color: #ffd966;
-      padding: 0.8rem;
-      font-weight: 700;
-    }
-    .results-table td, .results-table th {
-      padding: 0.7rem;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-    .winner-row {
-      background: #ffe484;
-      font-weight: 800;
-    }
-    .badge {
-      background: gold;
-      border-radius: 20px;
-      padding: 0.2rem 0.8rem;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
+    .results-table th { background: #1e4d2b; color: #ffd966; padding: 0.8rem; font-weight: 700; }
+    .results-table td, .results-table th { padding: 0.7rem; text-align: center; border-bottom: 1px solid #ddd; }
+    .winner-row { background: #ffe484; font-weight: 800; }
+    .badge { background: gold; border-radius: 20px; padding: 0.2rem 0.8rem; font-size: 0.8rem; font-weight: bold; }
     .message {
       margin: 1rem 0;
       padding: 0.7rem 1.2rem;
@@ -229,26 +172,11 @@
       background: #e6ffd9;
       color: #1f4f1f;
     }
-    .setup-box {
-      background: #fff7e0;
-      border: 2px solid #e6b422;
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .loading {
-      text-align: center;
-      padding: 1rem;
-      font-style: italic;
-      color: #2d572c;
-    }
+    .setup-box { background: #fff7e0; border: 2px solid #e6b422; border-radius: 1.5rem; padding: 1.5rem; text-align: center; }
+    .loading { text-align: center; padding: 1rem; font-style: italic; color: #2d572c; }
     @media (max-width: 600px) {
-      .container {
-        padding: 1.2rem;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
+      .container { padding: 1.2rem; }
+      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -257,14 +185,13 @@
   <h1>⚽ Polla Mundialista 🏆</h1>
   <div class="subtitle">Predicciones • 1° y 2° lugar de cada grupo</div>
 
-  <!-- Tabs -->
   <div class="tabs">
     <button class="tab-btn active" id="tabParticipante"> Participar</button>
     <button class="tab-btn" id="tabAdmin"> Admin</button>
     <button class="tab-btn" id="tabClasificacion"> Clasificación</button>
   </div>
 
-  <!-- PANEL PARTICIPANTE -->
+  <!-- Panel Participante -->
   <div id="panelParticipante" class="panel active-panel">
     <h3 style="color:#1f4f1f;"> Ingresá tu predicción</h3>
     <div id="loadingParticipante" class="loading" style="display:none;"> Cargando datos...</div>
@@ -277,11 +204,9 @@
     <div id="mensajeParticipante" class="message" style="display:none;"></div>
   </div>
 
-  <!-- PANEL ADMINISTRADOR -->
+  <!-- Panel Admin -->
   <div id="panelAdmin" class="panel">
     <h3 style="color:#1f4f1f;"> Resultados oficiales (solo admin)</h3>
-    
-    <!-- Crear admin por primera vez -->
     <div id="setupAdmin" class="setup-box" style="display:none;">
       <p style="font-weight:600;"> Primera configuración: creá tu contraseña de administrador</p>
       <div style="display:flex; gap:0.5rem; justify-content:center; align-items:center; flex-wrap:wrap;">
@@ -290,15 +215,11 @@
       </div>
       <p style="font-size:0.8rem; color:#5c5c5c; margin-top:0.5rem;">Guardala bien, no se puede recuperar.</p>
     </div>
-
-    <!-- Login admin -->
     <div id="loginAdmin" class="admin-lock" style="display:none;">
       <span> Clave:</span>
       <input type="password" id="claveAdmin" class="password-input" placeholder="Contraseña">
       <button class="btn" id="btnDesbloquear">Desbloquear</button>
     </div>
-
-    <!-- Contenido administrativo -->
     <div id="adminContent" style="display:none;">
       <div id="loadingAdmin" class="loading" style="display:none;"> Cargando datos...</div>
       <p style="font-weight:600; color:#2d572c;">Ingresá los equipos que realmente quedaron 1° y 2° en cada grupo.</p>
@@ -309,7 +230,7 @@
     </div>
   </div>
 
-  <!-- PANEL CLASIFICACIÓN -->
+  <!-- Panel Clasificación -->
   <div id="panelClasificacion" class="panel">
     <h3 style="color:#1f4f1f;"> Tabla de posiciones</h3>
     <div id="loadingClasificacion" class="loading" style="display:none;"> Cargando clasificación...</div>
@@ -321,7 +242,7 @@
 </div>
 
 <script>
-  // ==================== CONFIGURACIÓN DE FIREBASE (TU PROYECTO) ====================
+  // ==================== CONFIGURACIÓN DE FIREBASE ====================
   const firebaseConfig = {
     apiKey: "AIzaSyCX8aNC7Q6g6fU6lu-hHJx90RICllmTraM",
     authDomain: "prueba-30dd9.firebaseapp.com",
@@ -329,14 +250,11 @@
     storageBucket: "prueba-30dd9.firebasestorage.app",
     messagingSenderId: "447206662661",
     appId: "1:447206662661:web:a689b6a488af8cfb2c326c",
-    measurementId: "G-2L7YYNQ8E2"  // no es necesario para Firestore, se puede dejar
+    measurementId: "G-2L7YYNQ8E2"
   };
 
-  // Inicializar Firebase (compat)
   firebase.initializeApp(firebaseConfig);
   const db = firebase.firestore();
-
-  // Colecciones
   const prediccionesRef = db.collection("predicciones");
   const resultadosRef = db.collection("resultados").doc("oficial");
 
@@ -344,28 +262,24 @@
   const GRUPOS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'];
   const STORAGE_ADMIN_KEY = 'adminKeyMundial2026';
 
-  // ==================== ESTADO GLOBAL ====================
   let predicciones = [];
   let resultadosOficiales = {};
   let adminDesbloqueado = false;
   let adminKeyExistente = localStorage.getItem(STORAGE_ADMIN_KEY);
 
-  // ==================== REFERENCIAS AL DOM ====================
+  // Elementos DOM
   const tabParticipante = document.getElementById('tabParticipante');
   const tabAdmin = document.getElementById('tabAdmin');
   const tabClasificacion = document.getElementById('tabClasificacion');
   const panelParticipante = document.getElementById('panelParticipante');
   const panelAdmin = document.getElementById('panelAdmin');
   const panelClasificacion = document.getElementById('panelClasificacion');
-
   const gruposParticipanteDiv = document.getElementById('gruposParticipante');
   const gruposAdminDiv = document.getElementById('gruposAdmin');
-
   const nombreParticipanteInput = document.getElementById('nombreParticipante');
   const guardarPrediccionBtn = document.getElementById('guardarPrediccion');
   const mensajeParticipante = document.getElementById('mensajeParticipante');
   const loadingParticipante = document.getElementById('loadingParticipante');
-
   const setupAdminDiv = document.getElementById('setupAdmin');
   const nuevaClaveInput = document.getElementById('nuevaClaveAdmin');
   const btnCrearAdmin = document.getElementById('btnCrearAdmin');
@@ -377,120 +291,92 @@
   const btnCalcularPuntos = document.getElementById('btnCalcularPuntos');
   const mensajeAdmin = document.getElementById('mensajeAdmin');
   const loadingAdmin = document.getElementById('loadingAdmin');
-
   const contenedorTabla = document.getElementById('contenedorTabla');
   const btnRefrescarClasificacion = document.getElementById('btnRefrescarClasificacion');
   const loadingClasificacion = document.getElementById('loadingClasificacion');
 
-  // ==================== FUNCIONES AUXILIARES ====================
+  // Funciones auxiliares
   function escapeHtml(texto) {
-    return String(texto).replace(/[&<>"]/g, function(m) {
-      if (m === '&') return '&amp;';
-      if (m === '<') return '&lt;';
-      if (m === '>') return '&gt;';
-      if (m === '"') return '&quot;';
-      return m;
-    });
+    return String(texto).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[m]);
   }
-
   function normalizar(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\s+/g, ' ').trim();
   }
-
-  function mostrarMensaje(elemento, texto, colorFondo, duracion = 5000) {
-    elemento.textContent = texto;
-    elemento.style.display = 'block';
-    elemento.style.background = colorFondo || '#e6ffd9';
-    setTimeout(() => { elemento.style.display = 'none'; }, duracion);
+  function mostrarMensaje(el, texto, color, dur=5000) {
+    el.textContent = texto;
+    el.style.display = 'block';
+    el.style.background = color || '#e6ffd9';
+    setTimeout(() => el.style.display = 'none', dur);
   }
 
-  // ==================== GENERAR HTML DE GRUPOS ====================
-  function generarInputsGrupos(contenedor, prefijo, datosPredeterminados = null) {
+  // Generar formulario de grupos
+  function generarInputsGrupos(contenedor, prefijo, datos = null) {
     contenedor.innerHTML = '';
-    GRUPOS.forEach(grupo => {
-      const clave = `grupo${grupo}`;
-      let v1 = '', v2 = '';
-      if (datosPredeterminados && datosPredeterminados[clave]) {
-        v1 = datosPredeterminados[clave].primero || '';
-        v2 = datosPredeterminados[clave].segundo || '';
-      }
+    GRUPOS.forEach(g => {
+      const clave = `grupo${g}`;
+      const v1 = datos?.[clave]?.primero || '';
+      const v2 = datos?.[clave]?.segundo || '';
       const card = document.createElement('div');
       card.className = 'group-card';
       card.innerHTML = `
-        <h4>🏆 Grupo ${grupo}</h4>
+        <h4>🏆 Grupo ${g}</h4>
         <div class="input-row">
           <label>🥇 1°</label>
-          <input type="text" id="${prefijo}_primero_${grupo}" value="${escapeHtml(v1)}" placeholder="Equipo 1°" autocomplete="off">
+          <input type="text" id="${prefijo}_primero_${g}" value="${escapeHtml(v1)}" placeholder="Equipo 1°">
         </div>
         <div class="input-row">
           <label>🥈 2°</label>
-          <input type="text" id="${prefijo}_segundo_${grupo}" value="${escapeHtml(v2)}" placeholder="Equipo 2°" autocomplete="off">
-        </div>
-      `;
+          <input type="text" id="${prefijo}_segundo_${g}" value="${escapeHtml(v2)}" placeholder="Equipo 2°">
+        </div>`;
       contenedor.appendChild(card);
     });
   }
 
   function obtenerValoresGrupos(prefijo) {
     const datos = {};
-    GRUPOS.forEach(grupo => {
-      const p = document.getElementById(`${prefijo}_primero_${grupo}`);
-      const s = document.getElementById(`${prefijo}_segundo_${grupo}`);
-      datos[`grupo${grupo}`] = {
-        primero: p ? p.value.trim() : '',
-        segundo: s ? s.value.trim() : ''
+    GRUPOS.forEach(g => {
+      datos[`grupo${g}`] = {
+        primero: document.getElementById(`${prefijo}_primero_${g}`)?.value.trim() || '',
+        segundo: document.getElementById(`${prefijo}_segundo_${g}`)?.value.trim() || ''
       };
     });
     return datos;
   }
 
-  // ==================== PUNTUACIÓN (3 pts por posición exacta) ====================
-  function calcularPuntuacion(prediccion, resultados) {
+  // Puntuación: 3 puntos por posición exacta
+  function calcularPuntuacion(pred, real) {
     let puntos = 0;
-    GRUPOS.forEach(grupo => {
-      const clave = `grupo${grupo}`;
-      const pred = prediccion[clave] || { primero: '', segundo: '' };
-      const real = resultados[clave] || { primero: '', segundo: '' };
-      if (normalizar(pred.primero) && normalizar(real.primero) && normalizar(pred.primero) === normalizar(real.primero)) puntos += 3;
-      if (normalizar(pred.segundo) && normalizar(real.segundo) && normalizar(pred.segundo) === normalizar(real.segundo)) puntos += 3;
+    GRUPOS.forEach(g => {
+      const clave = `grupo${g}`;
+      if (normalizar(pred[clave]?.primero) && normalizar(real[clave]?.primero) && normalizar(pred[clave].primero) === normalizar(real[clave].primero)) puntos += 3;
+      if (normalizar(pred[clave]?.segundo) && normalizar(real[clave]?.segundo) && normalizar(pred[clave].segundo) === normalizar(real[clave].segundo)) puntos += 3;
     });
     return puntos;
   }
 
   function hayResultadosOficiales() {
-    return GRUPOS.some(g => {
-      const r = resultadosOficiales[`grupo${g}`];
-      return r && (r.primero.trim() || r.segundo.trim());
-    });
+    return GRUPOS.some(g => resultadosOficiales[`grupo${g}`]?.primero.trim() || resultadosOficiales[`grupo${g}`]?.segundo.trim());
   }
 
-  // ==================== MOSTRAR CLASIFICACIÓN ====================
   function mostrarClasificacion() {
     if (!hayResultadosOficiales()) {
-      contenedorTabla.innerHTML = '<p style="color:#b45f06;"> El administrador aún no ingresó los resultados.</p>';
+      contenedorTabla.innerHTML = '<p style="color:#b45f06;">⚠️ El administrador aún no ingresó los resultados.</p>';
       return;
     }
     if (!predicciones.length) {
       contenedorTabla.innerHTML = '<p>No hay predicciones todavía.</p>';
       return;
     }
-
-    const jugadores = predicciones.map(p => ({
-      nombre: p.nombre,
-      puntos: calcularPuntuacion(p, resultadosOficiales)
-    }));
-    jugadores.sort((a, b) => b.puntos - a.puntos);
+    const jugadores = predicciones.map(p => ({ nombre: p.nombre, puntos: calcularPuntuacion(p, resultadosOficiales) }));
+    jugadores.sort((a,b) => b.puntos - a.puntos);
     const max = jugadores[0]?.puntos || 0;
-
-    let html = `<table class="results-table">
-      <thead><tr><th>Posición</th><th>Participante</th><th>Puntaje</th></tr></thead><tbody>`;
-    jugadores.forEach((j, i) => {
-      const ganador = (i === 0 && j.puntos === max && max > 0);
+    let html = `<table class="results-table"><thead><tr><th>Posición</th><th>Participante</th><th>Puntaje</th></tr></thead><tbody>`;
+    jugadores.forEach((j,i) => {
+      const ganador = i === 0 && j.puntos === max && max > 0;
       html += `<tr class="${ganador ? 'winner-row' : ''}">
         <td>${i+1} ${ganador ? '👑' : ''}</td>
         <td><strong>${escapeHtml(j.nombre)}</strong> ${ganador ? '<span class="badge">GANADOR</span>' : ''}</td>
-        <td>${j.puntos} pts</td>
-      </tr>`;
+        <td>${j.puntos} pts</td></tr>`;
     });
     html += '</tbody></table>';
     if (jugadores.length && max > 0) {
@@ -500,102 +386,70 @@
     contenedorTabla.innerHTML = html;
   }
 
-  // ==================== SINCRONIZACIÓN CON FIREBASE ====================
-  async function cargarPrediccionesDesdeFirebase() {
+  // Firebase sync
+  async function cargarPredicciones() {
     try {
-      const snapshot = await prediccionesRef.orderBy("nombre").get();
+      const snap = await prediccionesRef.orderBy("nombre").get();
       predicciones = [];
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        predicciones.push({ id: doc.id, ...data });
-      });
-    } catch (error) {
-      console.error("Error al cargar predicciones:", error);
+      snap.forEach(doc => predicciones.push({ id: doc.id, ...doc.data() }));
+    } catch (e) {
+      console.error(e);
       predicciones = [];
     }
   }
 
-  async function cargarResultadosDesdeFirebase() {
+  async function cargarResultados() {
     try {
       const doc = await resultadosRef.get();
       if (doc.exists) {
         resultadosOficiales = doc.data();
       } else {
         resultadosOficiales = {};
-        GRUPOS.forEach(g => { resultadosOficiales[`grupo${g}`] = { primero: '', segundo: '' }; });
+        GRUPOS.forEach(g => resultadosOficiales[`grupo${g}`] = { primero: '', segundo: '' });
         await resultadosRef.set(resultadosOficiales);
       }
-      // Asegurar que todos los grupos existan
-      GRUPOS.forEach(g => {
-        if (!resultadosOficiales[`grupo${g}`]) {
-          resultadosOficiales[`grupo${g}`] = { primero: '', segundo: '' };
-        }
-      });
-    } catch (error) {
-      console.error("Error al cargar resultados:", error);
+      GRUPOS.forEach(g => { if (!resultadosOficiales[`grupo${g}`]) resultadosOficiales[`grupo${g}`] = { primero: '', segundo: '' }; });
+    } catch (e) {
+      console.error(e);
       resultadosOficiales = {};
-      GRUPOS.forEach(g => { resultadosOficiales[`grupo${g}`] = { primero: '', segundo: '' }; });
+      GRUPOS.forEach(g => resultadosOficiales[`grupo${g}`] = { primero: '', segundo: '' });
     }
   }
 
   async function guardarPrediccionEnFirebase(prediccion) {
-    try {
-      if (prediccion.id) {
-        await prediccionesRef.doc(prediccion.id).set(prediccion, { merge: true });
-      } else {
-        const docRef = await prediccionesRef.add(prediccion);
-        prediccion.id = docRef.id;
-      }
-    } catch (error) {
-      console.error("Error al guardar predicción:", error);
-      throw error;
-    }
+    // El ID del documento será el nombre del participante (reemplaza cualquier predicción anterior)
+    await prediccionesRef.doc(prediccion.nombre).set(prediccion);
   }
 
   async function guardarResultadosEnFirebase() {
-    try {
-      await resultadosRef.set(resultadosOficiales, { merge: true });
-    } catch (error) {
-      console.error("Error al guardar resultados:", error);
-      throw error;
-    }
+    await resultadosRef.set(resultadosOficiales, { merge: true });
   }
 
-  // ==================== INTERFAZ DE ADMINISTRADOR ====================
+  // Interfaz admin
   function actualizarInterfazAdmin() {
-    setupAdminDiv.style.display = 'none';
-    loginAdminDiv.style.display = 'none';
-    adminContent.style.display = 'none';
-    if (!adminKeyExistente) {
-      setupAdminDiv.style.display = 'block';
-    } else if (!adminDesbloqueado) {
-      loginAdminDiv.style.display = 'flex';
-    } else {
-      adminContent.style.display = 'block';
-    }
+    setupAdminDiv.style.display = loginAdminDiv.style.display = adminContent.style.display = 'none';
+    if (!adminKeyExistente) setupAdminDiv.style.display = 'block';
+    else if (!adminDesbloqueado) loginAdminDiv.style.display = 'flex';
+    else adminContent.style.display = 'block';
   }
 
-  // ==================== MANEJO DE PESTAÑAS ====================
   async function activarPestana(panel, tab) {
     [panelParticipante, panelAdmin, panelClasificacion].forEach(p => p.classList.remove('active-panel'));
     [tabParticipante, tabAdmin, tabClasificacion].forEach(t => t.classList.remove('active'));
     panel.classList.add('active-panel');
     tab.classList.add('active');
-
-    if (panel === panelParticipante) {
-      generarInputsGrupos(gruposParticipanteDiv, 'part');
-    } else if (panel === panelAdmin) {
+    if (panel === panelParticipante) generarInputsGrupos(gruposParticipanteDiv, 'part');
+    else if (panel === panelAdmin) {
       actualizarInterfazAdmin();
       if (adminDesbloqueado) {
         loadingAdmin.style.display = 'block';
-        await cargarResultadosDesdeFirebase();
+        await cargarResultados();
         generarInputsGrupos(gruposAdminDiv, 'admin', resultadosOficiales);
         loadingAdmin.style.display = 'none';
       }
     } else if (panel === panelClasificacion) {
       loadingClasificacion.style.display = 'block';
-      await cargarPrediccionesDesdeFirebase();
-      await cargarResultadosDesdeFirebase();
+      await Promise.all([cargarPredicciones(), cargarResultados()]);
       mostrarClasificacion();
       loadingClasificacion.style.display = 'none';
     }
@@ -605,10 +459,10 @@
   tabAdmin.addEventListener('click', () => activarPestana(panelAdmin, tabAdmin));
   tabClasificacion.addEventListener('click', () => activarPestana(panelClasificacion, tabClasificacion));
 
-  // ==================== CREAR CONTRASEÑA ADMIN ====================
+  // Crear clave admin
   btnCrearAdmin.addEventListener('click', () => {
     const clave = nuevaClaveInput.value.trim();
-    if (!clave) { alert('La contraseña no puede estar vacía.'); return; }
+    if (!clave) return alert('La contraseña no puede estar vacía.');
     localStorage.setItem(STORAGE_ADMIN_KEY, clave);
     adminKeyExistente = clave;
     adminDesbloqueado = true;
@@ -618,62 +472,42 @@
     mostrarMensaje(mensajeAdmin, '🔐 Contraseña creada. Ya podés usar las funciones de admin.', '#d4edda');
   });
 
-  // ==================== DESBLOQUEAR ADMIN ====================
+  // Desbloquear admin
   btnDesbloquear.addEventListener('click', () => {
     if (claveAdminInput.value === adminKeyExistente) {
       adminDesbloqueado = true;
       actualizarInterfazAdmin();
       generarInputsGrupos(gruposAdminDiv, 'admin', resultadosOficiales);
       claveAdminInput.value = '';
-    } else {
-      alert('🔒 Contraseña incorrecta.');
-      claveAdminInput.value = '';
-    }
+    } else alert('🔒 Contraseña incorrecta.');
   });
-  claveAdminInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') btnDesbloquear.click(); });
+  claveAdminInput.addEventListener('keypress', e => { if (e.key === 'Enter') btnDesbloquear.click(); });
 
-  // ==================== GUARDAR PREDICCIÓN ====================
+  // Guardar predicción
   guardarPrediccionBtn.addEventListener('click', async () => {
     const nombre = nombreParticipanteInput.value.trim();
-    if (!nombre) {
-      mostrarMensaje(mensajeParticipante, '❌ Ingresá tu nombre.', '#f8d7da');
-      return;
-    }
+    if (!nombre) return mostrarMensaje(mensajeParticipante, '❌ Ingresá tu nombre.', '#f8d7da');
     const datos = obtenerValoresGrupos('part');
-    const alguna = Object.values(datos).some(g => g.primero || g.segundo);
-    if (!alguna) {
-      mostrarMensaje(mensajeParticipante, '❌ Completá al menos un equipo.', '#f8d7da');
-      return;
-    }
-
+    if (!Object.values(datos).some(g => g.primero || g.segundo)) return mostrarMensaje(mensajeParticipante, '❌ Completá al menos un equipo.', '#f8d7da');
     loadingParticipante.style.display = 'block';
     guardarPrediccionBtn.disabled = true;
-
     try {
-      await cargarPrediccionesDesdeFirebase();
-      const existente = predicciones.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
-
-      let prediccionObjeto = { nombre, ...datos };
-      if (existente) {
-        prediccionObjeto.id = existente.id;
-      }
-
-      await guardarPrediccionEnFirebase(prediccionObjeto);
-      await cargarPrediccionesDesdeFirebase();
+      await guardarPrediccionEnFirebase({ nombre, ...datos });
+      await cargarPredicciones();
       mostrarMensaje(mensajeParticipante, '✅ Predicción guardada correctamente.', '#d4edda');
       nombreParticipanteInput.value = '';
       generarInputsGrupos(gruposParticipanteDiv, 'part');
     } catch (e) {
-      mostrarMensaje(mensajeParticipante, '❌ Error al guardar. Intentalo de nuevo.', '#f8d7da');
+      mostrarMensaje(mensajeParticipante, '❌ Error al guardar.', '#f8d7da');
     } finally {
       loadingParticipante.style.display = 'none';
       guardarPrediccionBtn.disabled = false;
     }
   });
 
-  // ==================== GUARDAR RESULTADOS OFICIALES ====================
+  // Guardar resultados oficiales
   guardarResultadosBtn.addEventListener('click', async () => {
-    if (!adminDesbloqueado) { alert('Desbloqueá el panel admin.'); return; }
+    if (!adminDesbloqueado) return alert('Desbloqueá el panel admin.');
     loadingAdmin.style.display = 'block';
     guardarResultadosBtn.disabled = true;
     try {
@@ -688,22 +522,16 @@
     }
   });
 
-  // ==================== CALCULAR PUNTUACIONES ====================
+  // Calcular puntuaciones
   btnCalcularPuntos.addEventListener('click', async () => {
     if (!adminDesbloqueado) return;
-    if (!hayResultadosOficiales()) {
-      mostrarMensaje(mensajeAdmin, '⚠️ Primero guardá los resultados oficiales.', '#f8d7da');
-      return;
-    }
+    if (!hayResultadosOficiales()) return mostrarMensaje(mensajeAdmin, '⚠️ Primero guardá los resultados.', '#f8d7da');
     loadingClasificacion.style.display = 'block';
     try {
-      await cargarResultadosDesdeFirebase();
-      await cargarPrediccionesDesdeFirebase();
+      await Promise.all([cargarResultados(), cargarPredicciones()]);
       mostrarClasificacion();
       activarPestana(panelClasificacion, tabClasificacion);
       mostrarMensaje(mensajeAdmin, '✅ Puntuaciones calculadas. Revisá la pestaña Clasificación.', '#d4edda');
-    } catch (e) {
-      console.error(e);
     } finally {
       loadingClasificacion.style.display = 'none';
     }
@@ -711,27 +539,20 @@
 
   btnRefrescarClasificacion.addEventListener('click', async () => {
     loadingClasificacion.style.display = 'block';
-    await cargarPrediccionesDesdeFirebase();
-    await cargarResultadosDesdeFirebase();
+    await Promise.all([cargarPredicciones(), cargarResultados()]);
     mostrarClasificacion();
     loadingClasificacion.style.display = 'none';
   });
 
-  // ==================== INICIALIZACIÓN ====================
-  async function inicializar() {
+  // Inicialización
+  (async function inicio() {
     loadingParticipante.style.display = 'block';
-    try {
-      await Promise.all([cargarPrediccionesDesdeFirebase(), cargarResultadosDesdeFirebase()]);
-    } catch (e) {
-      console.error("Error inicializando datos:", e);
-    }
+    await Promise.all([cargarPredicciones(), cargarResultados()]);
     loadingParticipante.style.display = 'none';
     generarInputsGrupos(gruposParticipanteDiv, 'part');
     actualizarInterfazAdmin();
     activarPestana(panelParticipante, tabParticipante);
-  }
-
-  inicializar();
+  })();
 </script>
 </body>
 </html>
